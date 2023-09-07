@@ -52,5 +52,14 @@
    - • A MAC address
   - • You can create ENI independently and attach them on the fly (move them) on EC2 instances for failover
   - • Bound to a specific availability zone (AZ) 
-
-
+# EC2 Hibernate
+ - stop -> EBs is intact
+ - terminate -> EBs lost
+ - hibernate --> the data int the ram is copy into a EBS (rott EBS must be encrypted)
+   - make boot much faster
+ - use cases: long running processing, saving the Ram state
+ - RAm size must be less than 150 GBs
+ - not supported for bare metal instances
+ - Root vloum, must be EBS, encrypted, not instance store and large
+ - cant be hibernated more than 60days
+ - hibernation --> stay that btw stopping and stopped 
