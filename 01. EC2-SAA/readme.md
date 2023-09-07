@@ -24,6 +24,7 @@
  - a public Ip for the WWW
  - can u use SSH on private IP ?--> no
 # placemeat gorups
+ - free to use only cost for EC2
  - Cluster -> clusters instances into a low-latency group in a single AZ (same rack or hardware)
      - pros: great network 10Gbps
      - cons: if the rack fials all instances fails at the same time
@@ -37,8 +38,19 @@
      - up to 7 instance in one partiont
      - can span across multiple AZ in the same region
      - up to 100s of ECs instances
-     - the instances in apartition do not share racks with the instances in the orther partions
+     - the instances in a partition do not share racks with the instances in the orther partions
      - a partions failure can affect many EC2 but won affect orther partitions
-     - us meta data to access the oartion informaiton
-     - 
+     - us metadata to access the orther partitions informaiton
+     - use for big data or partiontal aware
+# Elastic Network interfaces (ENI)
+ - logical component in a VPC that like `virtual network card`
+ - The ENI can have the following attributes:
+   - • Primary private IPv4, one or more secondary IPv4
+   - • One Elastic IP (IPv4) per private IPv4
+   - • One Public IPv4
+   - • One or more security groups
+   - • A MAC address
+  - • You can create ENI independently and attach them on the fly (move them) on EC2 instances for failover
+  - • Bound to a specific availability zone (AZ) 
+
 
