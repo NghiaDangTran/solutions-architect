@@ -1,3 +1,4 @@
+https://quizlet.com/ca/824283073/0909-ec2-solutions-architect-associate-flash-cards/?new
 # private vs public IP (Ipv4)
  - 2type of IP
      - Ipv4: 32 bit 1.160.10.240
