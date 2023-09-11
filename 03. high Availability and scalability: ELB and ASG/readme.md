@@ -82,3 +82,29 @@
  - the server will find the correct certificate or return the default
  - only works for ALB and NLB
  - apl- support multiple listener with multiple ssl certificate use SNI to make it work
+# connection draining
+ - Connection draining, also known as connection termination or graceful shutdown, is a feature provided by load balancers to ensure that in-flight requests to backend instances (like EC2 instances) are `allowed to complete`, even if the instance is being taken out of service.
+ - connection draing for clb
+ - deregistration delay for alb and nlb
+
+# AUTO Scailing Grouo ASG
+free just pay underneed cost
+
+ - scale out
+ - scale in
+ - ensurte min and max number of instance
+ - auto register new instances to LB
+ - if ec2 is unheathy auto create new one
+ - use cloudwatch alkarm tro scaling conditinally
+    - like average cpu, connection,,,
+##  scailing polices
+ - dynamic: target tracking scailing track average ASG cup to sat around 40%
+ - simple: cloud watch trigger when we should scail
+ - scheduled action: cron rule for know scail
+ - predictive scailing: continously forcast load and schdule scailing ahead of time
+## good metrics to scale on:
+ - CPU utilization
+ - requesst count per target
+ - average network in/out
+ - any custome metric that u push to cloudwatch
+## scailing cool down In simple terms, a scaling cooldown is a period of time during which an auto-scaling system waits before making additional scaling actions. 
