@@ -17,3 +17,15 @@
      - public Hosted Zones route traffic on the internet
      - private hosted zones how to route traffice whithon one or more VPC
  - pay o.50 per month
+# records TTL (Time To Live)
+ - save the address of the dns u called
+ - high TTL : 24 hr, less traffit on 53, can be oudated records
+ - low TTL: 60 sec: more traffic, more money, easy to change records
+ - except for alias records, TTL is mandatory for every DNS record
+# CNAME VS ALIAS
+ - CNAme point hostname to another other host name (app.mydomain.com =>balabla nayhting.com)\
+      - only for NON ROOT DOMAIN (AKA. somehting.mydomian.com)\
+ - ALIAS:  ponts a host name to an AWS resource
+       - work for bth ROOT domain and Non ROOT doamian free
+# alias records
+ - map a hostnoame to an AWS resource
