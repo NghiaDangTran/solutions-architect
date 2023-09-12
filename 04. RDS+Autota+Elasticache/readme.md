@@ -27,3 +27,26 @@
     - for scailing, network cost free within the same rgion of main db
   - multi AZ
       - `SYNC` once write other will write too
+      - one DNS name - automatic failover to standby
+      - read replicas set as multi az is for disater recovery
+ - to change from single AZ to multi AZ
+    - zero down time, jujst click modify
+    - a snapshot is taken,
+    - a new db is restored from the snapshot in new AZ
+    - synchorizaiton is established btw 2 dataabse
+  
+# RDS custom
+  - ` manged orcale and micrsoft SQL with os and database customization`
+  - still automate setup, operation, and scailng of database in AWS
+  - custom: full admin access to underlyting database and OS
+     - configure settings
+     - install patches
+     - enale native features
+     - access the underlyingg EC2 instance using SSH or SSM session manger
+  - `de-actiave Automation mode to peform ur custome, should take snap shot`
+# AMZ Aurora
+ - Aurora is service SQL from AMZ it is cloud optimied faster operation
+ - auto grow in gap =10gb up to 128 tb
+ - one main write, orther have read, automated failover
+ - can change master if curr fail
+ - db cluster --> shared strage volume, client write to write endpoint, read from read endpoint
