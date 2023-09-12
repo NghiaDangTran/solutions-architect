@@ -50,3 +50,77 @@
  - one main write, orther have read, automated failover
  - can change master if curr fail
  - db cluster --> shared strage volume, client write to write endpoint, read from read endpoint
+# Aurora Replicas
+ - ` Auto Scailing` auto scail if like cpu high
+ -  `custom endpoint` define a subset f Aurora instances as a custom endpoint
+     -  run analytical queries on specific replicas
+ -  `sservelesss` automated dabase instantiation and auto scailing based on actual usage, `no capacity planning`, `pay per second`
+# Aurora Multi master
+ - in case we want continous write
+ - each node is RW
+
+# Global Aurora
+ - corss region setup
+ -  AURORA cross region read replicas:
+    -  use for disaster recovery
+    -  simple to put in place
+ -  Aurora Global Database (recomended):
+    -   primary region (read/write)
+    -   up to 5 secondary read only regions, 16 read replicas per secondary region
+    -   cross reggion replication take less than 1 second
+# Aurora machine learing
+ - eable add ml based predictions ur application via SQL
+# RDS Backups
+ - automated backups
+ - manual DB snapshots
+ - trick in a stopped RDS database you will still pay for storage if u want to stop it for long tim
+# Resore
+ - restore RDS/Auroa backups or snapshot to creates a new database
+ - restore MySQL RDS database from S3
+ - resstirung MySQl Aurora cluste from S3
+# Database Cloningg
+ - create a new Aurora DB cluster from an existing one
+ - use cpoy on write protocl
+ - very fast and cost effective
+ - useful to create a stagingg database from a production databse without impact the pdocution data base
+# Security
+ - At rest encryption:
+ - inflight encryption
+ - IAM authentication
+ - security GGgroups
+ - No SSh available
+ - Audit Logs can be enabled
+# RDS Proxy
+ - improve database efficency by reducing the stress on databse resources and minimize open connections and timeout
+ - sverlress multi AZ
+ - reduce failover time by up to 66%
+ - Enfoce IAm authentication for DB and securely  store credentials in AWS secrets manager
+ - RDS proxy is never publiciy accessible must be accessed from VPC
+# AMZ ElastCahe
+ - same way RDS managed SQL
+ - make ur applicaiton stateless
+ - managged with redis or Memcached
+ - using elastic Cache need change code alot
+ - store user session Store
+## REdis
+ - multi AZ with auto failover
+ - read replicas to scale reads and have high availability
+ - data durability using AOF (Append-Only File) persistence
+ - backeup and restore features
+ - support sets and sorted sets
+## memCahed
+ - multi-node for partitioning of data (sharding)
+ - No high availability relication
+ - non presistent
+ - no backup and restore
+ - mult threaded architecture
+## cache Security
+ - support `IAM authenticaion for redis`
+ - Iam polices on Elasticache are only use for AWS Api level security
+ - `redis AUTH`
+ - memcahed-- suport SASL based authen
+## pattern for cached
+ - lazy loading: all the read data
+ - write through: adds or update datain in db
+ - seesion store: user session data
+ - use case: real time update, 
