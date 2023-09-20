@@ -46,5 +46,16 @@
  - paralleizs GETs into multiple smalelr to download
  - can be use to retrive only partial data
 # S3 select and Gacier Select
- - retrive less data use SQL by performing server-side filtering
- - can filter by rows 
+ - retrive less data use SQL by performing `server-side filtering` (CSV, JSON, dataframe)
+ - can filter by rows and colums, less netowrk transfer, less cpu cost client
+# S3 Batch Operations
+ - perform bulk operations on existing S3 object with a single request
+    - modify obj meta data
+    - copy objet btw s3 buckets
+    - encrypt un-encreypt obj
+    - modify ACLs tags
+    - restore objects from S3 Glacier
+    - Invoke Lambda function to perfom custom action on each obj
+ - A jobs conssists of a list of obj, the action to perform, and optional paramets
+ - manges retries, track progggress, sends completion,...
+ - u can use s3 inventorry to get obj list and use S3 Select to filter ur objf
