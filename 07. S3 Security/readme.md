@@ -83,3 +83,4 @@
    - mange at scale
  # S3 Obnject Lambda
  
+ is a feature of Amazon S3 that allows you to add custom code to process data as it is retrieved from S3. Before S3 Object Lambda, if you wanted to transform or process your data stored in S3 during retrieval, you'd typically need to build a separate application layer to fetch, process, and return the data. With S3 Object Lambda, you can achieve this directly within the S3 retrieval process.
