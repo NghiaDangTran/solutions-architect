@@ -57,4 +57,29 @@
  # S3 Acess logs
   - for audit u may want to loag all access to s3 bucket
   - the target logging bucket must be in the same AWS region
-  - 
+  - dont set this bucket to monitored ucker else it will create infinity loop
+# S3 per-signer URLs
+ - generate presigned URLS using the S3 console, AWS CLI or SDK
+ - URL expriation: S# console, AWS CLi
+ - make that url for GET /PUT
+# Glacier Vault lock
+ - Adopt a Write Once Read Many
+ - lock the policy for fure edits  (can no longer be chaned or deleted)
+ - delful for compliance and data retention
+# Object Lock (versioning must be eabled)
+ - • Retention mode - Compliance:
+   - • Object versions can't be overwritten or deleted by any user, including the root user
+   - • Objects retention modes can't be changed, and retention periods can't be shortened •
+ - Retention mode - Governance: •
+   - Most users can't overwrite or delete an object version or alter its lock settings •
+   - Some users have special permissions to change the retention or delete the object •
+ - Retention Period: protect the object for a fixed period, it can be extended •
+ - Legal Hold: •
+   - protect the object indefinitely, independent from retention period •
+    - can be freely placed and removed using the s3:PutObjectLegalHold IAM permission
+  # S3 Access Points
+   - set a folder or something to R or W
+   - it own DNS name (internet origin or VPC orgin)
+   - mange at scale
+ # S3 Obnject Lambda
+ 
