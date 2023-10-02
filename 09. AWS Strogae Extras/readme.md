@@ -49,4 +49,23 @@
      - can be use with on premises
      - can be configrured to be Multi-AZ (high Availability)
      - data is backed up daily to S3
-     - 
+ - FsX for Lustre
+   - parallel distrubuted file system, for large scale coputingg
+   - Linus + Cluster
+   - use for mL, high perfomance computin  (HPC)
+   - scales up to 100 GB, sub ms latencies
+   - have SSd, HDD
+   - seamless intergration with s3 (can read s3, write to s3)
+   - use on premisses (VPN or direct connect)
+# FsX file system Deploment Options
+  - Scratch File System
+     - temporatauy storage (not replicated)
+     - short term processing optimize costs
+  - persistent File System
+     - long term
+     - replicated within same AZ
+# AMz FsX for NetApp ONTAP
+ - File system compatible with NFS, SMB, iSCSI protocol
+ - `ONTAP or NAS` to AWS
+ - auto provision storage
+ - point in time instatneoujs cloning (help for testing new workload)s
