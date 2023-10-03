@@ -66,6 +66,15 @@
      - replicated within same AZ
 # AMz FsX for NetApp ONTAP
  - File system compatible with NFS, SMB, iSCSI protocol
- - `ONTAP or NAS` to AWS
+ -  move `ONTAP or NAS` to AWS
  - auto provision storage
- - point in time instatneoujs cloning (help for testing new workload)s
+ - point in time instatneoujs cloning (help for testing new workload)
+ - snapshots replication, low cost, compression and data de-duplication
+# Amz FSx for OpenZFS
+ - managed openZFs file system on AWs
+ - move workloads running on ZFS to AWS
+ - works with: Linux, Windowns, Macos,VMware cloud on AWS, Amz workspaces
+ - up to 1 mils IOPS < with 0.5ms latency
+ - snapshots, compression and low-cost
+ - point int time instantaneous cloning (helo fir testing new workloads)
+ - 
