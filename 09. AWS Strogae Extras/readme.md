@@ -77,4 +77,41 @@
  - up to 1 mils IOPS < with 0.5ms latency
  - snapshots, compression and low-cost
  - point int time instantaneous cloning (helo fir testing new workloads)
- - 
+# hybrid cloud
+ - amz is pushing for hybrid cloud because
+    - long cloud migrations
+    - security requiremnts
+    - compliance
+    - IT strategy
+# cloud native storage
+ - block: EBS, Ecs instance store
+ - File: EFs, FSx
+ - Object: S3, Glacier
+
+# AWS storage Gateway
+ - bridge btw on premise and cloud data
+   - disaster recovery
+   - back up and restore
+   - tiered storage (cheaper)
+   - on prem,ises chaches and low-latency files access
+# s3 file gateway
+ - on premise server connect with S3 file gate way (NFs or SMB) ---> https to s3
+ - most recentl used data is cached in the file gateway
+ - can be used with most tiering
+ - transitionb to s3 glacier using a lifecycle policy
+# FsX file Gate way
+ - native access to amz FsX for windows file server
+ - local cache for frequently accessed data, accelerate speed to transfer data
+ - windows nattive compatibility
+ - usfull for group files shares and home directories
+# volume Gateway
+ - block storage using  iSCSI protocol backed by s3
+ - cached vlomes: entgire dataset is on premise, scheduled backup to s3
+ - stored volumes: entire dataset is on premise, scheduled backeups to s3
+# Tape Gateway
+ - some companies still have physical tapes
+ - backup data
+# storage gateway - hardware appliance
+ - on premise virtualization , have enough reosure to cached
+ - helpfull for daily NFs backups in samll data centers
+![image](https://github.com/NghiaDangTran/solutions-architect/assets/33323750/d2d726a0-2e90-40c0-87ab-73a989c1d26c)
