@@ -115,3 +115,25 @@
  - on premise virtualization , have enough reosure to cached
  - helpfull for daily NFs backups in samll data centers
 ![image](https://github.com/NghiaDangTran/solutions-architect/assets/33323750/d2d726a0-2e90-40c0-87ab-73a989c1d26c)
+
+
+# AWS Transfer Family
+ - fully managed for file transfers into and out of S3, EFS
+    - FTP
+    - FTPS
+    - SFTP
+ - managed infra, scalablem reliable, highly available (multi A-z)
+ - pay per provisioned edpoint perhour +data transfer in GB
+ - shareing files, public datasets, CRm, ERP
+# AWS DataSync
+ - move large amount of data to and from
+    - on premises/ orther cloud to AWS -needs agents (nfs or SMB)
+    - aws to aws  (no agent needs)
+ - can synchorize to:
+    - s3
+    - efs
+    - Fsx
+ - replication can be scheduled
+ - file perissions and metadata are preserved
+ - one agent task can use 10Gbps can setup bandwidth limit
+![image](https://github.com/NghiaDangTran/solutions-architect/assets/33323750/458a70e7-a09c-49b2-a95e-c4ec7144b679)
