@@ -44,3 +44,6 @@
 # Use With ASG
  - track SQS --> Cloudwatch (length) --> trigger condition
  - SQS as buffer, client --> SQS--> ec2 Consumber --> update to DB or something (good for when client dont need confirmation of write)
+ - SQS to decouple, client --> SQS--> ec2 Consumer
+# AMZ SNS
+ - pub/sub design, send message 
