@@ -89,8 +89,10 @@
  - if a subscription doesnt have a filter policy, it receives every message
  - like json can have extra class, firlter based on that
 # Kinesis
+ - Collect, process and analyze streaning data in real times
+ - ingest real-time data like application logs, metrics, website clickstreams
+## Kinesis Data Streams
  - 
-
 
 
    
