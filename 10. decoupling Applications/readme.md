@@ -23,3 +23,24 @@
  - decouole btw application tiers
        - multiple client --> request to video --> multiple ec2
      - use SQS to process each of them
+## Security
+ - encrytion
+   - in flight HTTPS API
+   - at rest KMS keys
+   - Client side
+ - access controlds: IAM pocies
+ - SQS Access policies like s3
+   - use for cross account
+   - allow orthger service to write to SQS
+# Message Visibility Timeout
+ - after a mess is polled orther cannot call it
+ - 30s to process that, after all if not delte back to quueee
+ - if consumer need time call changeMessageVisibility to get more time
+# Long Polling
+ - consumer can wait untill something in the queue (reduce latency)
+ - decrease the number of API calls, while increasing the efficiency and latency of ur application
+ - enabled at the Queue lv, or at the APi lv using WaitTimeSeconds
+# FIFO Queue
+# Use With ASG
+ - track SQS --> Cloudwatch (length) --> trigger condition
+ - SQS as buffer, client --> SQS--> ec2 Consumber --> update to DB or something (good for when client dont need confirmation of write)
