@@ -152,7 +152,8 @@
  - for SQS FIFO
     - use group ID to distiguis each of them
     - else you can separate them in batch or group
-    - 
+# AMZ MQ
+ - use for rabbit MQ and Active MQ 
      
 
 
