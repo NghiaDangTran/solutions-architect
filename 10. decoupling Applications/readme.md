@@ -92,7 +92,56 @@
  - Collect, process and analyze streaning data in real times
  - ingest real-time data like application logs, metrics, website clickstreams
 ## Kinesis Data Streams
- - 
+ - client send data ---> (partition key, Data Blob 1mb/sec)  kinesis --> break into multiple shards in one stream--> (partition key, sequence no, Data Blob, 2MB/sec)  to consumer
+ - retention btw 1 to 365 days
+ - ability to reprocess data (replay)
+ - once data is inserted in kinesis, it cant be delete (immutability)
+ - ordering, same partion stay in same shard
+ - producers AWS SDK, Kinesis Producer Library (KPL), Kinesis Agent
+ - Consumers
+     - write ur own: Kinesis client Libarry (KCL), AWS SDK
+     - managed: AWS Lambda, kinesis Data Fire Hose, kinesis Data Analytics
+## Capacity Modes
+ - provisioned mode:
+    - u choose the nbumber of shard scale manually or use API
+    - each shard get 1MB/s in and 2MB/s out
+    - pay per shard per hour
+ - On-deman mode:
+    - no need to provison
+    - 4MB/s in and out
+    - scale auto based on obs`rved through put peak during 30days`
+    - pay per stream per hour and data in/out per GB
+## Security
+ - controll access by IAM
+ - in flight HTTPS
+ - at rest KMS
+ - client side encryption
+ - VPC endpoins
+ - monitor API calls using CLoud Trail
+## DATA FIRe Hose
+ - no code plat to take data from any where and then streaming  to kinessis (1mb batch)
+ - write to S#3 Readshift (copy through s3), open Search, 3rd party, custom destinations
+ - if fail sent to s3
+ - fully managed , auto scail, serverless
+ - near real time
+    - 60 sec latency
+    - min 1 MB of data at a time
+## Data Streams vs Firehose
+ - Data Streams
+    - streaming service for ingest at scale
+    - write custom code
+    - real-times
+    - manage scailing
+    - save from 1 to 365 days
+    - support replay capability
+ - Firehose
+    - load streaming data into s3...
+    - fully managed
+    - near real time
+    - auto scaikl
+    - no data storage
+    - doesnt support replay
+
 
 
    
