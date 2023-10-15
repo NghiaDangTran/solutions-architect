@@ -1,3 +1,7 @@
+![image](https://github.com/NghiaDangTran/solutions-architect/assets/33323750/9e83df26-deba-40c9-a8ae-1ac3939b8f59)
+
+
+
 # AMZ SQS
  - fully managed service used to decouple applications
  - unlimited throughput, unlimited number of messages in quueue
@@ -141,6 +145,15 @@
     - auto scaikl
     - no data storage
     - doesnt support replay
+# ordering data into Kinesis
+ - so each data point will send the partition key with them
+ - each partition key will have thier own shard
+ - so we for a given shard we know all id of them and connect them together
+ - for SQS FIFO
+    - use group ID to distiguis each of them
+    - else you can separate them in batch or group
+    - 
+     
 
 
 
